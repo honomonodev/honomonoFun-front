@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
 import AnimatedLines from '../components/widgets/AnimatedLines';
+import MessageCloud from '../components/common/MessageCloud';
 import bg from '../assets/bg.png'; // Import the background image
+import '../styles/index.css'; // Import global styles
 
 const HomePage: React.FC = () => {
   const [isSnowing, setIsSnowing] = useState(true);
@@ -21,8 +23,7 @@ const HomePage: React.FC = () => {
         style={{
           backgroundImage: `url(${bg})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          minHeight: '100vh',
+          backgroundPosition: 'top',
         }}
       >
         <AnimatedLines isSnowing={isSnowing} />
@@ -35,46 +36,47 @@ const HomePage: React.FC = () => {
           >
             {isSnowing ? 'Stop Snowing' : 'Start Snowing'}
           </button>
+          <MessageCloud message="Click the button to toggle the snow effect!" />
         </div>
       </header>
 
       {/* Features Section */}
-      <section id="features" className="py-12 md:py-16 bg-white text-center">
+      <section id="features" className="py-12 md:py-16 bg-white dark:bg-gray-900 text-center">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Features</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6 bg-gray-100 rounded-lg shadow-md">
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Login/Register</h3>
-              <p className="text-gray-700">Secure user authentication with JWT or OAuth.</p>
+            <div className="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md">
+              <h3 className="text-lg md:text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Login/Register</h3>
+              <p className="text-gray-700 dark:text-gray-300">Secure user authentication with JWT or OAuth.</p>
             </div>
-            <div className="p-6 bg-gray-100 rounded-lg shadow-md">
-              <h3 className="text-lg md:text-xl font-semibold mb-2">API Widget</h3>
-              <p className="text-gray-700">Integrate interesting and dynamic data from free APIs.</p>
+            <div className="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md">
+              <h3 className="text-lg md:text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">API Widget</h3>
+              <p className="text-gray-700 dark:text-gray-300">Integrate interesting and dynamic data from free APIs.</p>
             </div>
-            <div className="p-6 bg-gray-100 rounded-lg shadow-md">
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Collections & Filters</h3>
-              <p className="text-gray-700">Create and manage collections with advanced filtering options.</p>
+            <div className="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md">
+              <h3 className="text-lg md:text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Collections & Filters</h3>
+              <p className="text-gray-700 dark:text-gray-300">Create and manage collections with advanced filtering options.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-12 md:py-16 bg-gray-100 text-center">
+      <section className="py-12 md:py-16 bg-gray-100 dark:bg-gray-800 text-center">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">What People Are Saying</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">What People Are Saying</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="p-6 bg-white rounded-lg shadow-md">
-              <p className="text-gray-700 mb-4">"This is the best developer portfolio I've ever seen!"</p>
-              <p className="font-semibold">- John Doe</p>
+            <div className="p-6 bg-white dark:bg-gray-900 rounded-lg shadow-md">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">"This is the best developer portfolio I've ever seen!"</p>
+              <p className="font-semibold text-gray-900 dark:text-gray-100">- John Doe</p>
             </div>
-            <div className="p-6 bg-white rounded-lg shadow-md">
-              <p className="text-gray-700 mb-4">"Amazing work! Very impressive."</p>
-              <p className="font-semibold">- Jane Smith</p>
+            <div className="p-6 bg-white dark:bg-gray-900 rounded-lg shadow-md">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">"Amazing work! Very impressive."</p>
+              <p className="font-semibold text-gray-900 dark:text-gray-100">- Jane Smith</p>
             </div>
-            <div className="p-6 bg-white rounded-lg shadow-md">
-              <p className="text-gray-700 mb-4">"Highly recommend this developer."</p>
-              <p className="font-semibold">- Bob Johnson</p>
+            <div className="p-6 bg-white dark:bg-gray-900 rounded-lg shadow-md">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">"Highly recommend this developer."</p>
+              <p className="font-semibold text-gray-900 dark:text-gray-100">- Bob Johnson</p>
             </div>
           </div>
         </div>

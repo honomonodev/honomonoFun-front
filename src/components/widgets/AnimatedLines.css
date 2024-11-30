@@ -9,9 +9,10 @@
 .snowflake {
   position: absolute;
   top: -10px;
-  width: 10px;
-  height: 10px;
-  background-color: white;
+  width: 18px;
+  height: 18px;
+  background-color: transparent; /* Cool blue color */
+  fill: #08C7FF;
   border-radius: 50%;
   opacity: 0.8;
   animation: fall linear infinite;

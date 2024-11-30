@@ -1,3 +1,4 @@
+/* src/styles/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,6 +10,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.inner-shadow {
+  box-shadow: inset 0 2px 4px rgba(128, 0, 128, 0.6);
 }
 
 @keyframes lineAnimation {
@@ -35,34 +40,34 @@ body {
 }
 
 .animate-point {
-  offset-path: path('M0,0 L800,600');
+  offset-path: path("M0,0 L800,600");
   animation: pointAnimation 4s linear infinite;
 }
 
 .animate-point:nth-child(2) {
-  offset-path: path('M800,0 L0,600');
+  offset-path: path("M800,0 L0,600");
 }
 
 .animate-point:nth-child(3) {
-  offset-path: path('M400,0 L400,600');
+  offset-path: path("M400,0 L400,600");
 }
 
 .animate-point:nth-child(4) {
-  offset-path: path('M0,300 L800,300');
+  offset-path: path("M0,300 L800,300");
 }
 
 .animate-point:nth-child(5) {
-  offset-path: path('M0,0 L0,600');
+  offset-path: path("M0,0 L0,600");
 }
 
 .animate-point:nth-child(6) {
-  offset-path: path('M800,0 L800,600');
+  offset-path: path("M800,0 L800,600");
 }
 
 .animate-point:nth-child(7) {
-  offset-path: path('M0,0 L800,0');
+  offset-path: path("M0,0 L800,0");
 }
 
 .animate-point:nth-child(8) {
-  offset-path: path('M0,600 L800,600');
+  offset-path: path("M0,600 L800,600");
 }
