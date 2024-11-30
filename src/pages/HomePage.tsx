@@ -31,7 +31,7 @@ const HomePage: React.FC = () => {
           <h1 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
             Welcome to My Fullstack Developer Page!
           </h1>
-          <p className="text-lg md:text-xl mb-8 text-gray-700 dark:text-white">
+          <p className="text-lg md:text-xl mb-8 text-white-700 dark:text-black">
             Let's make the journey through this app together and see what we have here.
           </p>
           <button
