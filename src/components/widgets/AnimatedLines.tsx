@@ -1,9 +1,18 @@
-// AnimatedLines.tsx
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import './AnimatedLines.css';
 
-const AnimatedLines = () => {
+interface AnimatedLinesProps {
+  isSnowing: boolean;
+}
+
+const AnimatedLines: React.FC<AnimatedLinesProps> = ({ isSnowing }) => {
   useEffect(() => {
+    if (!isSnowing) {
+      const snowflakes = document.querySelectorAll('.snowflake');
+      snowflakes.forEach(snowflake => snowflake.remove());
+      return;
+    }
+
     const createSnowflake = () => {
       const snowflake = document.createElement('div');
       snowflake.className = 'snowflake';
@@ -20,7 +29,7 @@ const AnimatedLines = () => {
     const interval = setInterval(createSnowflake, 100);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isSnowing]);
 
   return <div className="animated-lines"></div>;
 };

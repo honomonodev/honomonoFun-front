@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
 import AnimatedLines from '../components/widgets/AnimatedLines';
+import bg from '../assets/bg.png'; // Import the background image
 
 const HomePage: React.FC = () => {
-  const [isToggled, setIsToggled] = useState(false);
+  const [isSnowing, setIsSnowing] = useState(true);
 
-  const handleToggle = () => {
-    setIsToggled(!isToggled);
+  const handleToggleSnow = () => {
+    setIsSnowing(!isSnowing);
   };
 
   return (
@@ -15,18 +16,24 @@ const HomePage: React.FC = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <header className="flex-grow bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-center text-white p-6 relative overflow-hidden">
-        <AnimatedLines />
-        <div className="max-w-screen-lg mx-auto relative z-10">
+      <header
+        className="flex-grow flex flex-col items-center justify-center text-center text-white p-6 relative overflow-hidden bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${bg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          minHeight: '100vh',
+        }}
+      >
+        <AnimatedLines isSnowing={isSnowing} />
+        <div className="max-w-screen-lg mx-auto relative z-10 flex flex-col items-center text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">Welcome to My Fullstack Developer Page!</h1>
           <p className="text-lg md:text-xl mb-8">Let's make the journey through this app together and see what we have here.</p>
           <button
-            onClick={handleToggle}
-            className={`bg-white text-blue-500 px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold hover:bg-gray-100 transition-transform duration-500 ${
-              isToggled ? 'animate-bounce' : 'animate-pulse'
-            }`}
+            onClick={handleToggleSnow}
+            className="bg-white text-blue-500 px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold hover:bg-gray-100 transition-transform duration-500"
           >
-            Explore Features
+            {isSnowing ? 'Stop Snowing' : 'Start Snowing'}
           </button>
         </div>
       </header>
