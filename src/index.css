@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes lineAnimation {
+  0% {
+    stroke-dasharray: 0, 2000;
+  }
+  100% {
+    stroke-dasharray: 2000, 0;
+  }
+}
+
+@keyframes pointAnimation {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.animate-line {
+  stroke-dasharray: 2000, 0;
+  animation: lineAnimation 4s linear infinite;
+}
+
+.animate-point {
+  offset-path: path('M0,0 L800,600');
+  animation: pointAnimation 4s linear infinite;
+}
+
+.animate-point:nth-child(2) {
+  offset-path: path('M800,0 L0,600');
+}
+
+.animate-point:nth-child(3) {
+  offset-path: path('M400,0 L400,600');
+}
+
+.animate-point:nth-child(4) {
+  offset-path: path('M0,300 L800,300');
+}
+
+.animate-point:nth-child(5) {
+  offset-path: path('M0,0 L0,600');
+}
+
+.animate-point:nth-child(6) {
+  offset-path: path('M800,0 L800,600');
+}
+
+.animate-point:nth-child(7) {
+  offset-path: path('M0,0 L800,0');
+}
+
+.animate-point:nth-child(8) {
+  offset-path: path('M0,600 L800,600');
+}
